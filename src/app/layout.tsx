@@ -18,6 +18,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <body
                 style={{
                     margin: 0,
+                    overflowX: "hidden",
                 }}
             >
                 <AppProvider>
