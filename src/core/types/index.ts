@@ -1,16 +1,13 @@
-export interface Shop {
+export interface Ingredient {
     id: number;
     name: string;
-    food: Food[];
 }
 
-export interface Food {
-    name: string;
+export interface Item {
+    ingredient: Ingredient;
     amount: number;
+    price: number;
+    unit: string;
 }
 
-export interface Marker {
-    lat: number;
-    lng: number;
-    shodId: number;
-}
+export type Supply = Item[] | null;
