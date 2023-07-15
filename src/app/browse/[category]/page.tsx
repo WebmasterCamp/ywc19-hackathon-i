@@ -1,7 +1,6 @@
-import { ItemsGrid } from '@/components/Category/ItemsGrid';
-import { Items } from '@/core/contexts/data';
-import { Typography } from '@mui';
-import { NextPage } from 'next';
+import { ItemsGrid } from "@/components/Category/ItemsGrid";
+import { Typography } from "@mui";
+import { NextPage } from "next";
 
 interface CategoryPageProps {
     params: {
@@ -12,7 +11,7 @@ interface CategoryPageProps {
 const CategoryPage: NextPage<CategoryPageProps> = ({ params }) => {
     return (
         <>
-            <ItemsGrid />
+            <ItemsGrid category={params.category} />
             <Typography>Category: {params.category}</Typography>
         </>
     );

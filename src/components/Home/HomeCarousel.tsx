@@ -5,9 +5,14 @@ import { Container, Button, Box } from '@mui/material';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
-const Item: FC = (props: {}) => {
+interface ItemProps {
+    name: string;
+    description: string;
+}
+
+const Item: FC<ItemProps> = ({ name, description }) => {
     return (
-        <Box sx={{ minHeight: '300px', background: '#D9D9D9',margin:"0 auto"}}>
+        <Box sx={{ minHeight: '200px', background: '#D9D9D9' }}>
             <h2>{props.item.name}</h2>
             <p>{props.item.description}</p>
 
@@ -29,35 +34,31 @@ export const HomeCarousel: FC = () => {
     ];
 
     return (
-        <Container maxWidth="lg">
-            <Carousel
-                height={"300px"}
-                NextIcon={<NavigateNextIcon />}
-                PrevIcon={<NavigateBeforeIcon />}
-                swipe
-                navButtonsAlwaysVisible
-                navButtonsProps={{
-                    style: {
-                        background: 'none',
-                        color: 'black'
-                    },
-                }}
-                indicatorIconButtonProps={{
-                    style: {
-                        zIndex: 10,
-                    },
-                }}
-                indicatorContainerProps={{
-                    style: {
-                        position: 'relative',
-                        bottom: 20,
-                    },
-                }}
-            >
-                {items.map((item, i) => (
-                    <Item item={item} key={i} />
-                ))}
-            </Carousel>
-        </Container>
+        <Carousel
+            NextIcon={<NavigateNextIcon />}
+            PrevIcon={<NavigateBeforeIcon />}
+            swipe
+            navButtonsAlwaysVisible
+            navButtonsProps={{
+                style: {
+                    background: 'none',
+                },
+            }}
+            indicatorIconButtonProps={{
+                style: {
+                    zIndex: 10,
+                },
+            }}
+            indicatorContainerProps={{
+                style: {
+                    position: 'relative',
+                    bottom: 20,
+                },
+            }}
+        >
+            {items.map((item, i) => (
+                <Item item={item} key={i} />
+            ))}
+        </Carousel>
     );
 };

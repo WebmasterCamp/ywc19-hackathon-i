@@ -1,7 +1,7 @@
-import { ShopHeader, SupplyTable } from '@/components/Home';
-import { Form } from '@/components/Home/Form';
-import { Box } from '@mui';
-import { NextPage } from 'next';
+import { ShopHeader, SupplyTable } from "@/components/Dashboard";
+import { Form } from "@/components/Dashboard/Form";
+import { Box } from "@mui";
+import { NextPage } from "next";
 
 const IndexPage: NextPage = () => {
     return (

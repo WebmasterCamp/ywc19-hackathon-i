@@ -1,25 +1,24 @@
 'use client';
 
 import { useAppContext } from '@/core/contexts';
+import { Ingredients } from '@/core/contexts/data';
 import { Autocomplete, Box, Button, TextField } from '@mui';
 import { FC, useState } from 'react';
 
 export const Form: FC = () => {
-    const { supply, orderItems } = useAppContext();
+    const { items, orderItems } = useAppContext();
     const [itemId, setItemId] = useState<number>(0);
     const [amount, setAmount] = useState<number>(0);
 
-    const choices =
-        supply &&
-        supply[0].items.map((row) => {
-            return {
-                label: row.ingredient.name,
-                amount: row.amount,
-                itemId: row.ingredient.id,
-            };
-        });
+    const choices = items.map((row) => {
+        return {
+            label:
+                Ingredients.find((i) => i.id === row.ingredientId)?.name ?? '',
+            amount: row.amount,
+            itemId: row.ingredientId,
+        };
+    });
     return (
-        //future do forms with many items
         <>
             <Box
                 sx={{

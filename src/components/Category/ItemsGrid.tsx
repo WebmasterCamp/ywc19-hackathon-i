@@ -1,24 +1,38 @@
-import { Box } from '@mui';
-import { FC } from 'react';
-import { ItemBuyCard } from './ItemBuyCard';
+import { Box, Typography } from "@mui";
+import { FC } from "react";
+import { ItemBuyCard } from "./ItemBuyCard";
 
-export const ItemsGrid: FC = () => {
+interface ItemsGridProps {
+    category: string;
+}
+
+export const ItemsGrid: FC<ItemsGridProps> = ({ category }) => {
     return (
         <Box
             sx={{
-                display: 'grid',
-                gridTemplateColumns: 'auto auto auto auto',
-                columnGap: 1,
-                rowGap: 1,
-                width: '95%',
+                width: "95%",
                 marginTop: 4,
             }}
         >
-            <ItemBuyCard />
-            <ItemBuyCard />
-            <ItemBuyCard />
-            <ItemBuyCard />
-            <ItemBuyCard />
+            <Typography variant="h5" sx={{ marginBottom: 1 }}>
+                {category.charAt(0).toUpperCase() + category.slice(1)}
+            </Typography>
+
+            <Box
+                sx={{
+                    display: "grid",
+                    gridTemplateColumns: "auto auto auto auto",
+                    columnGap: 1,
+                    rowGap: 1,
+                    width: "100%",
+                }}
+            >
+                <ItemBuyCard />
+                <ItemBuyCard />
+                <ItemBuyCard />
+                <ItemBuyCard />
+                <ItemBuyCard />
+            </Box>
         </Box>
     );
 };
