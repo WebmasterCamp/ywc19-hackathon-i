@@ -8,14 +8,28 @@ export const Shops: Shop[] = [
 export const initialSupply: Supply[] = [
     {
         shopId: 1,
-        ingredient: { id: 1, name: 'Flour' },
+        items: [
+            {
+                ingredient: { id: 1, name: 'assdf' },
+                amount: 2,
+                price: 2,
+                unit: 'as',
+            },
+        ],
         amount: 1000,
         price: 12,
         unit: 'g',
     },
     {
         shopId: 2,
-        ingredient: { id: 2, name: 'Spring Onion' },
+        items: [
+            {
+                ingredient: { id: 1, name: 'assdf' },
+                amount: 2,
+                price: 2,
+                unit: 'as',
+            },
+        ],
         amount: 1000,
         price: 10,
         unit: 'g',

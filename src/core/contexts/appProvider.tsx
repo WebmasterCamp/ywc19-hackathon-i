@@ -13,11 +13,14 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
         setSupply(() => initialSupply);
     }, []);
 
+    const orderItems = () => {};
+
     return (
         <AppContext.Provider
             value={{
                 supply,
                 setSupply,
+                orderItems,
             }}
         >
             {children}

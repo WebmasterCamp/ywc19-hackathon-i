@@ -6,12 +6,14 @@ import { FC } from 'react';
 
 export const Form: FC = () => {
     const { supply } = useAppContext();
-    const choices = supply?.map((row) => {
-        return {
-            label: row.ingredient.name,
-            amount: row.amount,
-        };
-    });
+    const choices =
+        supply &&
+        supply[0].items.map((row) => {
+            return {
+                label: row.ingredient.name,
+                amount: row.amount,
+            };
+        });
     return (
         //future do forms with many items
         <>
