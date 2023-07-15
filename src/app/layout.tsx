@@ -1,11 +1,11 @@
-import '$styles/globals.css';
-import { Metadata } from 'next';
-import { Layout } from '$components/Layout';
-import { AppProvider } from '@/core/contexts/appProvider';
+import "$styles/globals.css";
+import { Metadata } from "next";
+import { Layout } from "$components/Layout";
+import { AppProvider } from "@/core/contexts/appProvider";
 
 export const metadata: Metadata = {
-    title: 'ywc',
-    description: 'dksnd',
+    title: "ShareKan",
+    description: "ShareKan",
 };
 
 interface RootLayoutProps {

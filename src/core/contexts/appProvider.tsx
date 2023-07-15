@@ -1,13 +1,14 @@
-'use client';
+"use client";
 
-import { FC, PropsWithChildren, useEffect, useState } from 'react';
+import { FC, PropsWithChildren, useEffect, useState } from "react";
 
-import { AppContext } from './appContext';
-import { Item } from '../types';
-import { initialItems, Shops } from './data';
+import { AppContext } from "./appContext";
+import { Item } from "../types";
+import { initialItems, Shops } from "./data";
 
 export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
     const [items, setItems] = useState<Item[]>([]);
+    const [searchText, setSearchText] = useState<string>("");
 
     useEffect(() => {
         setItems(() => initialItems);
@@ -28,44 +29,21 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
             if (item) {
                 const finalAmount = Math.max(0, item.amount - amount);
                 console.log(`finalAmount: ${finalAmount}`);
-                setItems(
-                    (prev) => {
-                        const finalItems = [
-                            ...prev.filter(
-                                (item) =>
-                                    item.ingredientId !== ingredientId ||
-                                    item.shopId !== shopId
-                            ),
-                            {
-                                ...item,
-                                amount: finalAmount,
-                            },
-                        ];
-                        console.log(finalItems);
-                        return finalItems;
-                    }
-                    // if (prev) {
-                    //     const newSupply = [...prev];
-                    //     const newShop = { ...shop };
-                    //     const newItem = { ...item };
-                    //     newItem.amount = finalAmount;
-                    //     console.log(newItem);
-                    //     newShop.items = [
-                    //         ...shop.items.filter(
-                    //             (item) => item.ingredientId !== itemId
-                    //         ),
-                    //         newItem,
-                    //     ];
-                    //     console.log(newShop);
-                    //     const finalSupply = [
-                    //         ...newSupply.filter((s) => s.shopId !== shopId),
-                    //         newShop,
-                    //     ];
-                    //     console.log(finalSupply);
-                    //     return finalSupply;
-                    // }
-                    // return prev;
-                );
+                setItems((prev) => {
+                    const finalItems = [
+                        ...prev.filter(
+                            (item) =>
+                                item.ingredientId !== ingredientId ||
+                                item.shopId !== shopId
+                        ),
+                        {
+                            ...item,
+                            amount: finalAmount,
+                        },
+                    ];
+                    console.log(finalItems);
+                    return finalItems;
+                });
             }
         }
     };
@@ -76,6 +54,8 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
                 items,
                 setItems,
                 orderItems,
+                searchText,
+                setSearchText,
             }}
         >
             {children}

@@ -24,7 +24,7 @@ export const initialItems: Item[] = [
 ];
 
 export const Ingredients: Ingredient[] = [
-    { id: 1, category: Category.Vegatables, name: "beef" },
+    { id: 1, category: Category.Meat, name: "beef" },
     { id: 2, category: Category.Meat, name: "chicken" },
     { id: 3, category: Category.Meat, name: "pork" },
     { id: 4, category: Category.Meat, name: "lamb" },
