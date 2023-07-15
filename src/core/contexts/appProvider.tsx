@@ -17,7 +17,7 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
         const shop = supply?.find((shop) => shop.shopId === shopId);
         if (shop) {
             const item = shop.items.find(
-                (item) => item.ingredient.id === itemId
+                (item) => item.ingredientId === itemId
             );
             if (item) {
                 console.log(
@@ -34,7 +34,7 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
                         console.log(newItem);
                         newShop.items = [
                             ...shop.items.filter(
-                                (item) => item.ingredient.id !== itemId
+                                (item) => item.ingredientId !== itemId
                             ),
                             newItem,
                         ];

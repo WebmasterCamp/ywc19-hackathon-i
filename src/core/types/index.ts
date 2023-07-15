@@ -4,10 +4,11 @@ export interface Ingredient {
 }
 
 export interface Item {
-    ingredient: Ingredient;
+    ingredientId: number;
     amount: number;
     price: number;
     unit: string;
+    shopId: number;
 }
 
 export interface Shop {

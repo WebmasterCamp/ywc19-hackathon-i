@@ -15,7 +15,15 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
     return (
         <html lang="en">
-            <body>
+            <body
+                style={{
+                    margin: 0,
+                    // display: 'flex',
+                    // flexDirection: 'column',
+                    // alignItems: 'center',
+                }}
+            >
+                {/* <body style={{ margin: 0, padding: '5px' }}> */}
                 <AppProvider>
                     <Layout>{children}</Layout>
                 </AppProvider>
