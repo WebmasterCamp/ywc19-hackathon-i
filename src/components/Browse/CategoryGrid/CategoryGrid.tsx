@@ -3,7 +3,7 @@ import { FC } from "react";
 import { CategroyRow } from "./CategoryRow";
 import { Category } from "@/core/types";
 
-export const CategroyGrid: FC = () => {
+export const CategoryGrid: FC = () => {
     return (
         <Box
             sx={{

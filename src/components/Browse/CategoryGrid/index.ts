@@ -1,2 +1,2 @@
-export { CategroyGrid } from './CategoryGrid';
-export { CategroyRow } from './CategoryRow';
+export { CategoryGrid } from "./CategoryGrid";
+export { CategroyRow } from "./CategoryRow";
