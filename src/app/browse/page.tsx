@@ -1,12 +1,12 @@
 import { Typography } from '@mui';
 import { NextPage } from 'next';
 
-const IndexPage: NextPage = () => {
+const BrowsePage: NextPage = () => {
     return (
         <>
-            <Typography>hello</Typography>
+            <Typography>browse</Typography>
         </>
     );
 };
 
-export default IndexPage;
+export default BrowsePage;

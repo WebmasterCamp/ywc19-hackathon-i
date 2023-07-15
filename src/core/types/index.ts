@@ -20,7 +20,4 @@ export interface Shop {
 export interface Supply {
     shopId: number;
     items: Item[];
-    amount: number;
-    price: number;
-    unit: string;
 }

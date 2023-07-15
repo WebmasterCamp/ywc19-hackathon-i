@@ -55,7 +55,7 @@ export const Form: FC = () => {
             </Box>
             <Button
                 variant="contained"
-                onClick={() => orderItems(0, itemId, amount)}
+                onClick={() => orderItems(1, itemId, amount)}
             >
                 Order
             </Button>

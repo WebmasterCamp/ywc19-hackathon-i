@@ -20,21 +20,31 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
                 (item) => item.ingredient.id === itemId
             );
             if (item) {
+                console.log(
+                    `order item shopId ${shopId} itemId ${itemId} amount ${amount}`
+                );
                 const finalAmount = Math.max(0, item.amount - amount);
+                console.log(`finalAmount ${finalAmount}`);
                 setSupply((prev) => {
                     if (prev) {
                         const newSupply = [...prev];
                         const newShop = { ...shop };
                         const newItem = { ...item };
                         newItem.amount = finalAmount;
+                        console.log(newItem);
                         newShop.items = [
                             ...shop.items.filter(
                                 (item) => item.ingredient.id !== itemId
                             ),
                             newItem,
                         ];
-                        newSupply[shopId] = newShop;
-                        return newSupply;
+                        console.log(newShop);
+                        const finalSupply = [
+                            ...newSupply.filter((s) => s.shopId !== shopId),
+                            newShop,
+                        ];
+                        console.log(finalSupply);
+                        return finalSupply;
                     }
                     return prev;
                 });

@@ -10,28 +10,22 @@ export const initialSupply: Supply[] = [
         shopId: 1,
         items: [
             {
-                ingredient: { id: 1, name: 'assdf' },
-                amount: 2,
+                ingredient: { id: 1, name: 'shop 1 veg' },
+                amount: 200,
                 price: 2,
                 unit: 'as',
             },
         ],
-        amount: 1000,
-        price: 12,
-        unit: 'g',
     },
     {
         shopId: 2,
         items: [
             {
-                ingredient: { id: 1, name: 'assdf' },
-                amount: 2,
+                ingredient: { id: 1, name: 'shop 2 veg' },
+                amount: 200,
                 price: 2,
                 unit: 'as',
             },
         ],
-        amount: 1000,
-        price: 10,
-        unit: 'g',
     },
 ];

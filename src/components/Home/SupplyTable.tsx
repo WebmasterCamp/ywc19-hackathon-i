@@ -32,25 +32,31 @@ export const SupplyTable: FC = () => {
                 </TableHead>
                 <TableBody>
                     {supply &&
-                        supply[0].items.map((row) => (
-                            <TableRow
-                                key={row.ingredient.id}
-                                sx={{
-                                    '&:last-child td, &:last-child th': {
-                                        border: 0,
-                                    },
-                                }}
-                            >
-                                <TableCell component="th" scope="row">
-                                    {row.ingredient.name}
-                                </TableCell>
-                                <TableCell align="right">
-                                    {row.amount}
-                                </TableCell>
-                                <TableCell align="right">{row.price}</TableCell>
-                                <TableCell align="right">{row.unit}</TableCell>
-                            </TableRow>
-                        ))}
+                        supply.map((s) => {
+                            return s.items.map((row) => (
+                                <TableRow
+                                    key={row.ingredient.id}
+                                    sx={{
+                                        '&:last-child td, &:last-child th': {
+                                            border: 0,
+                                        },
+                                    }}
+                                >
+                                    <TableCell component="th" scope="row">
+                                        {row.ingredient.name}
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        {row.amount}
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        {row.price}
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        {row.unit}
+                                    </TableCell>
+                                </TableRow>
+                            ));
+                        })}
                 </TableBody>
             </Table>
         </TableContainer>
