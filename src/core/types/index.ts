@@ -1,6 +1,16 @@
 export interface Ingredient {
     id: number;
+    category: Category;
     name: string;
+}
+
+export enum Category {
+    Meat = "meat",
+    Vegatables = "vegetables",
+    Fruits = "fruits",
+    Grains = "grains",
+    Dairy = "dairy",
+    Spices = "spices",
 }
 
 export interface Item {
@@ -14,7 +24,6 @@ export interface Item {
 export interface Shop {
     id: number;
     shopName: string;
-    cat: string;
     rating: number;
 }
 
