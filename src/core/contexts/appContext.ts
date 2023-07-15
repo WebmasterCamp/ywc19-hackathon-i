@@ -4,8 +4,8 @@ import { Dispatch, SetStateAction, createContext, useContext } from 'react';
 import { Supply } from '../types';
 
 interface IAppContext {
-    supply: Supply;
-    setSupply: Dispatch<SetStateAction<Supply>>;
+    supply: Supply[] | null;
+    setSupply: Dispatch<SetStateAction<Supply[] | null>>;
 }
 
 export const AppContext = createContext<IAppContext>({

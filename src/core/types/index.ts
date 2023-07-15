@@ -19,7 +19,7 @@ export interface Shop {
 
 export interface Supply {
     shopId: number;
-    ingredient: {id:number, name:string};
+    ingredient: { id: number; name: string };
     amount: number;
     price: number;
     unit: string;

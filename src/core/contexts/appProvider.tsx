@@ -7,7 +7,7 @@ import { Supply } from '../types';
 import { initialSupply } from './data';
 
 export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
-    const [supply, setSupply] = useState<Supply>(null);
+    const [supply, setSupply] = useState<Supply[] | null>(null);
 
     useEffect(() => {
         setSupply(() => initialSupply);
