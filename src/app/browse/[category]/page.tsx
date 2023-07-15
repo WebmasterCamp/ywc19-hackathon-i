@@ -1,5 +1,4 @@
 import { ItemsGrid } from '@/components/Category/ItemsGrid';
-import { Items } from '@/core/contexts/data';
 import { Typography } from '@mui';
 import { NextPage } from 'next';
 

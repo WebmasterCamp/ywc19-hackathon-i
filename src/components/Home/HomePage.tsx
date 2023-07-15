@@ -1,11 +1,11 @@
-"use client";
-import {FC} from 'react';
-import { Header } from '../Header';
+'use client';
+import { FC } from 'react';
 import { HomeCarousel } from './HomeCarousel';
 
 export const HomePage: FC = () => {
-    return (<>
-    <Header />
-    <HomeCarousel />
-    </>)
-}
+    return (
+        <>
+            <HomeCarousel />
+        </>
+    );
+};

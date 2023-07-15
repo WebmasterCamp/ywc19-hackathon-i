@@ -1,15 +1,20 @@
 'use client';
 import { FC } from 'react';
 import Carousel from 'react-material-ui-carousel';
-import { Paper, Button, Box } from '@mui/material';
+import { Button, Box } from '@mui/material';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
-const Item: FC = (props: {}) => {
+interface ItemProps {
+    name: string;
+    description: string;
+}
+
+const Item: FC<ItemProps> = ({ name, description }) => {
     return (
         <Box sx={{ minHeight: '200px', background: '#D9D9D9' }}>
-            <h2>{props.item.name}</h2>
-            <p>{props.item.description}</p>
+            <h2>{name}</h2>
+            <p>{description}</p>
 
             <Button className="CheckButton">Check it out!</Button>
         </Box>
@@ -52,7 +57,7 @@ export const HomeCarousel: FC = () => {
             }}
         >
             {items.map((item, i) => (
-                <Item item={item} key={i} />
+                <Item name={item.name} description={item.description} key={i} />
             ))}
         </Carousel>
     );
