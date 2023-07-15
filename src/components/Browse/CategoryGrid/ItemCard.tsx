@@ -1,16 +1,20 @@
-import { Box } from '@mui';
-import { FC } from 'react';
+import { Box } from "@mui";
+import { FC } from "react";
 
-export const ItemCard: FC = () => {
+interface ItemCardProps {
+    name: string;
+}
+
+export const ItemCard: FC<ItemCardProps> = ({ name }) => {
     return (
         <Box
             sx={{
-                width: '20%',
-                height: '20vh',
-                backgroundColor: 'gray',
+                width: { xs: "21%", md: "16%" },
+                height: "20vh",
+                backgroundColor: "gray",
             }}
         >
-            ss
+            {name}
         </Box>
     );
 };
