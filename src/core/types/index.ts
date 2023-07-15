@@ -10,4 +10,17 @@ export interface Item {
     unit: string;
 }
 
-export type Supply = Item[] | null;
+export interface Shop {
+    id: number;
+    shopName: string;
+    cat: string;
+    rating: number;
+}
+
+export interface Supply {
+    shopId: number;
+    ingredient: {id:number, name:string};
+    amount: number;
+    price: number;
+    unit: string;
+}
