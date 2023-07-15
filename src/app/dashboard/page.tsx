@@ -1,15 +1,16 @@
-import { SupplyTable, ShopHeader } from '@/components/Home';
-import { Button } from '@mui';
-import { SupplyTable } from '@/components/Home';
+import { ShopHeader, SupplyTable } from '@/components/Home';
 import { Form } from '@/components/Home/Form';
 import { Box } from '@mui';
 import { NextPage } from 'next';
-import {HomePage} from '../components/Home'
 
 const IndexPage: NextPage = () => {
     return (
         <>
-            <HomePage />
+            <ShopHeader />
+            <SupplyTable />
+            <Box sx={{ marginTop: 3 }}>
+                <Form />
+            </Box>
         </>
     );
 };

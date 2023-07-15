@@ -4,10 +4,11 @@ export interface Ingredient {
 }
 
 export interface Item {
-    ingredient: Ingredient;
+    ingredientId: number;
     amount: number;
     price: number;
     unit: string;
+    shopId: number;
 }
 
 export interface Shop {
@@ -20,7 +21,4 @@ export interface Shop {
 export interface Supply {
     shopId: number;
     items: Item[];
-    amount: number;
-    price: number;
-    unit: string;
 }

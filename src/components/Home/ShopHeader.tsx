@@ -13,8 +13,10 @@ export const ShopHeader: FC = () => {
             <Typography>Category: {Shops[1].cat}</Typography>
             <Grid container rowSpacing={1}>
                 <Typography>Rating:</Typography>
-                {[...new Array(parseInt(Shops[1].rating))].map(item => <StarRateIcon />)}
-                <StarHalfIcon/>
+                {/* {[...new Array(Shops[1].rating)].map((item, index) => (
+                    <StarRateIcon key={index} />
+                ))}
+                <StarHalfIcon /> */}
             </Grid>
         </>
     );
