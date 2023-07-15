@@ -3,25 +3,21 @@
 import { FC, PropsWithChildren, useEffect, useState } from 'react';
 
 import { AppContext } from './appContext';
-import { Marker, Shop } from '../types';
-import { initialMarkers, initialShops } from './data';
+import { Supply } from '../types';
+import { initialSupply } from './data';
 
 export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
-    const [shops, setShops] = useState<Shop[] | null>(null);
-    const [markers, setMarkers] = useState<Marker[] | null>(null);
+    const [supply, setSupply] = useState<Supply>(null);
 
     useEffect(() => {
-        setShops(() => initialShops);
-        setMarkers(() => initialMarkers);
+        setSupply(() => initialSupply);
     }, []);
 
     return (
         <AppContext.Provider
             value={{
-                shops,
-                setShops,
-                markers,
-                setMarkers,
+                supply,
+                setSupply,
             }}
         >
             {children}
