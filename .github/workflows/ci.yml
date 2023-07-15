@@ -39,6 +39,8 @@ jobs:
           tags: ghcr.io/webmastercamp/${{ github.event.repository.name }}:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          build-args: |
+            GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}
 
       - 
         name: Deploy

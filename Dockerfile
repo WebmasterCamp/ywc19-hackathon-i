@@ -26,6 +26,8 @@ COPY . .
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
+ARG GOOGLE_API_KEY=unknown
+ENV NEXT_PUBLIC_REACT_APP_GOOGLE_API_KEY=${GOOGLE_API_KEY}
 
 RUN yarn build
 
