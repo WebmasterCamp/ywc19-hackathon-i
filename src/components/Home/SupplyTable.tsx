@@ -1,6 +1,7 @@
 'use client';
 
 import { useAppContext } from '@/core/contexts';
+import { Ingredients } from '@/core/contexts/data';
 import {
     Paper,
     TableContainer,
@@ -13,7 +14,7 @@ import {
 import { FC } from 'react';
 
 export const SupplyTable: FC = () => {
-    const { supply } = useAppContext();
+    const { items } = useAppContext();
 
     return (
         <TableContainer component={Paper}>
@@ -24,6 +25,7 @@ export const SupplyTable: FC = () => {
             >
                 <TableHead>
                     <TableRow>
+                        <TableCell>ShopId</TableCell>
                         <TableCell>Name</TableCell>
                         <TableCell align="right">Amount</TableCell>
                         <TableCell align="right">Price</TableCell>
@@ -31,32 +33,33 @@ export const SupplyTable: FC = () => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {supply &&
-                        supply.map((s) => {
-                            return s.items.map((row) => (
-                                <TableRow
-                                    key={row.ingredient.id}
-                                    sx={{
-                                        '&:last-child td, &:last-child th': {
-                                            border: 0,
-                                        },
-                                    }}
-                                >
-                                    <TableCell component="th" scope="row">
-                                        {row.ingredient.name}
-                                    </TableCell>
-                                    <TableCell align="right">
-                                        {row.amount}
-                                    </TableCell>
-                                    <TableCell align="right">
-                                        {row.price}
-                                    </TableCell>
-                                    <TableCell align="right">
-                                        {row.unit}
-                                    </TableCell>
-                                </TableRow>
-                            ));
-                        })}
+                    {items.map((row) => (
+                        <TableRow
+                            key={
+                                row.ingredientId.toString() +
+                                row.shopId.toString()
+                            }
+                            sx={{
+                                '&:last-child td, &:last-child th': {
+                                    border: 0,
+                                },
+                            }}
+                        >
+                            <TableCell component="th" scope="row">
+                                {
+                                    Ingredients.find(
+                                        (i) => i.id === row.ingredientId
+                                    )?.name
+                                }
+                            </TableCell>
+                            <TableCell component="th" scope="row">
+                                {row.shopId}
+                            </TableCell>
+                            <TableCell align="right">{row.amount}</TableCell>
+                            <TableCell align="right">{row.price}</TableCell>
+                            <TableCell align="right">{row.unit}</TableCell>
+                        </TableRow>
+                    ))}
                 </TableBody>
             </Table>
         </TableContainer>
