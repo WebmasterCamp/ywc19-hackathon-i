@@ -1,38 +1,30 @@
-"use client";
+'use client';
 
-import { FC, PropsWithChildren, useEffect, useState } from "react";
+import { FC, PropsWithChildren, useEffect, useState } from 'react';
 
-import { AppContext, Cards } from "./appContext";
-import { initialCards } from "./initialCards";
+import { AppContext } from './appContext';
+import { Marker, Shop } from '../types';
+import { initialMarkers, initialShops } from './data';
 
 export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [cards, setCards] = useState<Cards>(null);
-  const [currentCardIndex, setCurrentCardIndex] = useState<number | null>(null);
+    const [shops, setShops] = useState<Shop[] | null>(null);
+    const [markers, setMarkers] = useState<Marker[] | null>(null);
 
-  useEffect(() => {
-    setCards(() => initialCards);
-  }, []);
+    useEffect(() => {
+        setShops(() => initialShops);
+        setMarkers(() => initialMarkers);
+    }, []);
 
-  // useEffect(() => {
-  //   if (cards && currentCardIndex) setCurrentCardIndex((currentCardIndex + 1) % cards?.length);
-  // }, [cards]);
-
-  const resetCards = () => {
-    setCards(() => initialCards);
-    setCurrentCardIndex(() => 0);
-  };
-
-  return (
-    <AppContext.Provider
-      value={{
-        cards,
-        setCards,
-        currentCardIndex,
-        setCurrentCardIndex,
-        resetCards,
-      }}
-    >
-      {children}
-    </AppContext.Provider>
-  );
+    return (
+        <AppContext.Provider
+            value={{
+                shops,
+                setShops,
+                markers,
+                setMarkers,
+            }}
+        >
+            {children}
+        </AppContext.Provider>
+    );
 };

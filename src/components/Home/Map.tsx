@@ -12,7 +12,7 @@ export const Map = () => {
     const center = useMemo(() => ({ lat: 18.52043, lng: 73.856743 }), []);
 
     return (
-        <div className="App w-10 h-10">
+        <div className="w-[40vw] h-[40vh]">
             {!isLoaded ? (
                 <h1>Loading...</h1>
             ) : (
@@ -20,7 +20,14 @@ export const Map = () => {
                     mapContainerClassName="map-container"
                     center={center}
                     zoom={10}
-                />
+                >
+                    <Marker
+                        position={{ lat: 18.52043, lng: 73.856743 }}
+                        icon={
+                            'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                        }
+                    />
+                </GoogleMap>
             )}
         </div>
     );

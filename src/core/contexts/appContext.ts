@@ -1,32 +1,22 @@
-"use client";
+'use client';
 
-import { Dispatch, SetStateAction, createContext, useContext } from "react";
-
-export type Card = {
-  question: string;
-  answer: number;
-  choices: string[];
-  type: "new" | "wrong";
-};
-
-export type Cards = Card[] | null;
+import { Dispatch, SetStateAction, createContext, useContext } from 'react';
+import { Marker, Shop } from '../types';
 
 interface IAppContext {
-  cards: Cards;
-  setCards: Dispatch<SetStateAction<Cards>>;
-  currentCardIndex: number | null;
-  setCurrentCardIndex: Dispatch<SetStateAction<number | null>>;
-  resetCards: () => void;
+    shops: Shop[] | null;
+    setShops: Dispatch<SetStateAction<Shop[] | null>>;
+    markers: Marker[] | null;
+    setMarkers: Dispatch<SetStateAction<Marker[] | null>>;
 }
 
 export const AppContext = createContext<IAppContext>({
-  cards: null,
-  setCards: () => {},
-  currentCardIndex: null,
-  setCurrentCardIndex: () => {},
-  resetCards: () => {},
+    shops: null,
+    setShops: () => {},
+    markers: null,
+    setMarkers: () => {},
 });
 
 export function useAppContext() {
-  return useContext(AppContext);
+    return useContext(AppContext);
 }
