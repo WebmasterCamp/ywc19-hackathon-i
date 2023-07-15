@@ -6,7 +6,7 @@ import { Supply } from '../types';
 interface IAppContext {
     supply: Supply[] | null;
     setSupply: Dispatch<SetStateAction<Supply[] | null>>;
-    orderItems: () => void;
+    orderItems: (shopId: number, itemId: number, amount: number) => void;
 }
 
 export const AppContext = createContext<IAppContext>({

@@ -13,7 +13,34 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
         setSupply(() => initialSupply);
     }, []);
 
-    const orderItems = () => {};
+    const orderItems = (shopId: number, itemId: number, amount: number) => {
+        const shop = supply?.find((shop) => shop.shopId === shopId);
+        if (shop) {
+            const item = shop.items.find(
+                (item) => item.ingredient.id === itemId
+            );
+            if (item) {
+                const finalAmount = Math.max(0, item.amount - amount);
+                setSupply((prev) => {
+                    if (prev) {
+                        const newSupply = [...prev];
+                        const newShop = { ...shop };
+                        const newItem = { ...item };
+                        newItem.amount = finalAmount;
+                        newShop.items = [
+                            ...shop.items.filter(
+                                (item) => item.ingredient.id !== itemId
+                            ),
+                            newItem,
+                        ];
+                        newSupply[shopId] = newShop;
+                        return newSupply;
+                    }
+                    return prev;
+                });
+            }
+        }
+    };
 
     return (
         <AppContext.Provider
