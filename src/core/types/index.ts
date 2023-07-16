@@ -1,7 +1,10 @@
+import { StaticImageData } from "next/image";
+
 export interface Ingredient {
     id: number;
     category: Category;
     name: string;
+    image: StaticImageData;
 }
 
 export enum Category {

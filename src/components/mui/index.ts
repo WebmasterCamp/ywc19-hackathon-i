@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-export { Container, Box, Paper, Card } from '@mui/material';
-export { Typography } from '@mui/material';
-export { TextField, Autocomplete } from '@mui/material';
-export { Button, ToggleButton, ToggleButtonGroup } from '@mui/material';
-export { Link as MuiLink } from '@mui/material';
+export { Container, Box, Paper, Card } from "@mui/material";
+export { Typography } from "@mui/material";
+export { TextField, Autocomplete } from "@mui/material";
+export { Button, ToggleButton, ToggleButtonGroup } from "@mui/material";
+export { Link as MuiLink, LinearProgress } from "@mui/material";
 export {
     Table,
     TableContainer,
@@ -12,4 +12,4 @@ export {
     TableRow,
     TableCell,
     TableBody,
-} from '@mui/material';
+} from "@mui/material";

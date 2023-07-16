@@ -29,7 +29,11 @@ export const ItemsGrid: FC<ItemsGridProps> = ({ category }) => {
                 }}
             >
                 {Ingredients.filter((i) => i.category === category).map((i) => (
-                    <ItemBuyCard key={i.name} name={i.name} />
+                    <ItemBuyCard
+                        key={i.name}
+                        name={i.name}
+                        ingredientId={i.id}
+                    />
                 ))}
             </Box>
         </Box>

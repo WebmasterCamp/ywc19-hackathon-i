@@ -1,15 +1,15 @@
-import { FC } from 'react';
-import { Box, Container } from '../mui';
-import { Grid } from '@mui/material';
-import { spacing } from '@mui/system';
+import { FC } from "react";
+import { Box, Container } from "../mui";
+import { Grid } from "@mui/material";
+// import { spacing } from '@mui/system';
 
 const Circle: FC = () => (
     <Box
         sx={{
-            width: '60px',
-            height: '60px',
-            borderRadius: '50%',
-            background: '#D9D9D9',
+            width: "60px",
+            height: "60px",
+            borderRadius: "50%",
+            background: "#D9D9D9",
         }}
     ></Box>
 );
