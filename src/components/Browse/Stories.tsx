@@ -27,12 +27,12 @@ export const Stories: FC = () => {
                     gap: 6,
                 }}
             >
-                <Story />
-                <Story />
-                <Story />
-                <Story />
-                <Story />
-                <Story />
+                <Story image=""/>
+                <Story image=""/>
+                <Story image=""/>
+                <Story image=""/>
+                <Story image=""/>
+                <Story image=""/>
             </Box>
         </>
     );
