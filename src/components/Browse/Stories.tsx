@@ -12,12 +12,12 @@ export const Stories: FC = () => {
                     justifyContent: "space-between",
                 }}
             >
+                {/* <Story image="apple.jpg" />
                 <Story />
                 <Story />
                 <Story />
                 <Story />
-                <Story />
-                <Story />
+                <Story /> */}
             </Box>
             <Box
                 sx={{
