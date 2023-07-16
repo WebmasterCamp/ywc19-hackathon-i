@@ -11,3 +11,7 @@ export { default as shrimp } from "./shrimp.jpg";
 export { default as potato } from "./potato.jpg";
 export { default as rice } from "./rice.jpg";
 export { default as apple } from "./apple.jpg";
+export { default as carrots} from "./carrots.jpg"
+export { default as shrimps} from "./shrimps.jpg"
+export { default as lamb} from "./lamb.jpg"
+export { default as tomatoes} from "./tomatoes.jpg"
