@@ -11,7 +11,7 @@ export const Header: FC = () => {
                 position="static"
                 sx={{
                     background: '#FFFFFF',
-                    color: 'black',
+                    color: "#FF7009",
                     boxShadow: 'none',
                     padding:'0.5em'
                 }}
@@ -23,7 +23,7 @@ export const Header: FC = () => {
                         justifyContent: 'space-between',
                     }}
                 >
-                    <Typography variant="h5">Logo</Typography>
+                    <Box component="img" src='./logo-orange.png'/>
                     <Box sx={{ display: 'flex' , alignItems: 'center', gap: "10px"}}>
                         <ShoppingBasketIcon
                             sx={{
