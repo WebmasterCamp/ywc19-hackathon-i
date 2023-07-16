@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use client';
 import { FC } from 'react';
 import { Box, Button, Container } from '../mui';
@@ -5,8 +6,8 @@ import { LinearProgress, Typography } from '@mui/material';
 
 function LinearProgressWithLabel(props: {} & { value: number }) {
     return (
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Box sx={{ width: '100%', mr: 1, mb: 2 }}>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box sx={{ width: "100%", mr: 1, mb: 2 }}>
                 <LinearProgress
                     variant="determinate"
                     {...props}
@@ -19,6 +20,11 @@ function LinearProgressWithLabel(props: {} & { value: number }) {
     );
 }
 
+=======
+"use client";
+import { FC } from "react";
+import { Box, Button, Container } from "../mui";
+>>>>>>> a9677f3995be44d3d3897c32a9f8578432a8eb2d
 
 export const HotDeal: FC = () => {
     return (
@@ -45,27 +51,43 @@ export const HotDeal: FC = () => {
             ></Box>
             <Box
                 sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
+                    display: "flex",
+                    flexDirection: "column",
                 }}
             >
-                <Typography id="hot-deal-text" fontSize={20} fontWeight={600}>Hot Deal!</Typography>
+                <Typography id="hot-deal-text" fontSize={20} fontWeight={600}>
+                    Hot Deal!
+                </Typography>
                 <Typography>อีกกี่ ... คน คุณจะได้ในราคา</Typography>
                 <LinearProgressWithLabel value={60} />
                 <Box
                     sx={{
-                        display: 'flex',
+                        display: "flex",
                         gap: 1,
                     }}
                 >
-                    <Button variant="outlined" fontSize={{sm: 10,lg: 16}} sx={{
-                        background:"white",
-                        borderRadius:3,
-                    }}>ดูรายละเอียด</Button>
-                    <Button variant="contained" fontSize={{sm: 10,lg: 16}} sx={{
-                        color:"white",
-                        borderRadius:3,
-                    }}>สั่งเลย</Button>
+                    <Button
+                        variant="outlined"
+                        sx={{
+                            fontSize: { sm: 10, lg: 16 },
+                            background: "white",
+                            borderRadius: 3,
+                        }}
+                    >
+                        ดูรายละเอียด
+                    </Button>
+                    <Link href={"./browse"}>
+                        <Button
+                            variant="contained"
+                            sx={{
+                                fontSize: { sm: 10, lg: 16 },
+                                color: "white",
+                                borderRadius: 3,
+                            }}
+                        >
+                            สั่งเลย
+                        </Button>
+                    </Link>
                 </Box>
             </Box>
         </Container>

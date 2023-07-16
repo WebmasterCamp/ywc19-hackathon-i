@@ -10,7 +10,6 @@ export const Stories: FC = () => {
                     width: "95%",
                     display: { sx: "flex", lg: "none" },
                     justifyContent: "space-between",
-                    backgroundColor: "pink",
                 }}
             >
                 <Story />
@@ -25,7 +24,6 @@ export const Stories: FC = () => {
                     width: "95%",
                     display: { sx: "none", lg: "flex" },
                     // justifyContent: "",
-                    backgroundColor: "pink",
                     gap: 6,
                 }}
             >
