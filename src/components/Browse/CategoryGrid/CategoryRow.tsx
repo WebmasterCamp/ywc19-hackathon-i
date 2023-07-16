@@ -18,7 +18,6 @@ export const CategroyRow: FC<CategoryRowProps> = ({ category }) => {
                     width: "100%",
                     display: "flex",
                     justifyContent: "space-between",
-                    backgroundColor: "red",
                 }}
             >
                 <Typography variant="h5">
@@ -37,7 +36,6 @@ export const CategroyRow: FC<CategoryRowProps> = ({ category }) => {
                     display: { xs: "flex", md: "none" },
                     columnGap: 2,
                     marginTop: 1,
-                    backgroundColor: "pink",
                 }}
             >
                 {Ingredients.filter((i) => i.category === category)
@@ -50,7 +48,6 @@ export const CategroyRow: FC<CategoryRowProps> = ({ category }) => {
                     display: { xs: "none", md: "flex" },
                     columnGap: 2,
                     marginTop: 1,
-                    backgroundColor: "pink",
                 }}
             >
                 {Ingredients.filter((i) => i.category === category).map((i) => (

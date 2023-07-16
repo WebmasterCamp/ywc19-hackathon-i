@@ -1,22 +1,24 @@
 "use client";
 
 import { useAppContext } from "@/core/contexts";
-import { Box, Button, LinearProgress, Typography } from "@mui";
+import { Box, Button, LinearProgress, TextField, Typography } from "@mui";
 import Image from "next/image";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Ingredients } from "@/core/contexts/data";
 import PeopleIcon from "@mui/icons-material/People";
 import { ShareDeal } from "./ShareDeal";
+import Link from "next/link";
 
 interface OrderItemProps {
     ingredientId: number;
 }
 
 export const OrderItem: FC<OrderItemProps> = ({ ingredientId }) => {
-    const { items } = useAppContext();
+    const { items, orderItems } = useAppContext();
+    const [amount, setAmount] = useState<number>(0);
+
     const item = items.filter((i) => i.ingredientId === ingredientId)[0];
     const ingredient = Ingredients.filter((i) => i.id === ingredientId)[0];
-    console.log(ingredientId);
     return (
         <Box
             sx={{
@@ -29,15 +31,12 @@ export const OrderItem: FC<OrderItemProps> = ({ ingredientId }) => {
         >
             <Image
                 alt="img"
-                // src=""
                 src={ingredient.image}
-                width={200}
+                width={400}
                 height={400}
                 style={{
                     objectFit: "cover",
                     borderRadius: "10px",
-                    // minHeight: "100%",
-                    // minWidth: "100%",
                 }}
             />
             <Box
@@ -64,10 +63,10 @@ export const OrderItem: FC<OrderItemProps> = ({ ingredientId }) => {
                             textDecoration: "line-through",
                         }}
                     >
-                        Quantity
+                        {item && item.price * 1.25}
                     </Typography>
                     <Typography variant="h5" sx={{ display: "inline" }}>
-                        Quantity
+                        {item && item.price} บาท
                     </Typography>
                 </Box>
                 <Typography variant="h5">Time left</Typography>
@@ -81,11 +80,26 @@ export const OrderItem: FC<OrderItemProps> = ({ ingredientId }) => {
                 >
                     <LinearProgress
                         variant="determinate"
-                        value={75}
+                        value={(300 - (item ? item.amount : 200)) / 3}
                         sx={{ width: "75%", height: 20, borderRadius: "20px" }}
                     />
-                    <Typography sx={{ marginLeft: 2 }}>45/60</Typography>
+                    <Typography sx={{ marginLeft: 2 }}>
+                        {300 - (item ? item.amount : 200)}/300{" "}
+                        {item && item.unit}
+                    </Typography>
                 </Box>
+                <TextField
+                    id="outlined-number"
+                    label="Amount"
+                    type="number"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                    sx={{ marginTop: 2 }}
+                    onChange={(event) =>
+                        setAmount(parseInt(event.target.value))
+                    }
+                />
                 <Box
                     sx={{
                         display: "flex",
@@ -94,9 +108,17 @@ export const OrderItem: FC<OrderItemProps> = ({ ingredientId }) => {
                         marginTop: 2,
                     }}
                 >
-                    <Button variant="contained" sx={{ borderRadius: "20px" }}>
-                        สั่งเลย
-                    </Button>
+                    <Link href="/order">
+                        <Button
+                            variant="contained"
+                            sx={{ borderRadius: "20px", width: "25%" }}
+                            onClick={() => {
+                                orderItems(1, ingredientId, amount);
+                            }}
+                        >
+                            สั่งเลย
+                        </Button>
+                    </Link>
                     <PeopleIcon sx={{ marginLeft: 4 }} />
                     <Typography sx={{ marginLeft: 2 }}>
                         5 คนกำลังรวมพลังเพื่อดีลนี้

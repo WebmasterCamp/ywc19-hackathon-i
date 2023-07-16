@@ -6,7 +6,6 @@ export const Total: FC = () => {
         <Box
             sx={{
                 width: "95%",
-                backgroundColor: "lightgreen",
                 marginTop: 4,
                 borderTop: "1px solid black",
             }}
