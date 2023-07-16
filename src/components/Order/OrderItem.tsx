@@ -108,10 +108,10 @@ export const OrderItem: FC<OrderItemProps> = ({ ingredientId }) => {
                         marginTop: 2,
                     }}
                 >
-                    <Link href="/order">
+                    <Link href="/browse">
                         <Button
                             variant="contained"
-                            sx={{ borderRadius: "20px", width: "25%" }}
+                            sx={{ borderRadius: "20px", width: "100px" }}
                             onClick={() => {
                                 orderItems(1, ingredientId, amount);
                             }}

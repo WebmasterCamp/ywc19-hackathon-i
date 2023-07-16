@@ -2,6 +2,7 @@ import { Ingredients } from "@/core/contexts/data";
 import { Box, Typography } from "@mui";
 import { FC } from "react";
 import { RelatedCard } from "./RelatedCard";
+import { GoBack } from "../Category/GoBack";
 
 interface RelatedItemsProps {
     ingredientId: number;
@@ -38,6 +39,7 @@ export const RelatedItems: FC<RelatedItemsProps> = ({ ingredientId }) => {
                     <RelatedCard key={i.id} ingredient={i} />
                 ))}
             </Box>
+            <GoBack />
         </Box>
     );
 };
