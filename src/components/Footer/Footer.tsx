@@ -7,7 +7,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 
 export const Footer: FC = () => {
     return (
-        <Box className="footer" padding={10} display="gird" placeItems="center">
+        <Box className="footer" padding={10}>
                 <Grid container display="flex" alignItems="center" justifyContent="center" rowSpacing={4}>
                     <Grid item xs={12} md={3} display="flex" direction="column" >
                         <Box component="img" src="./logo.png" width="200px"/>
