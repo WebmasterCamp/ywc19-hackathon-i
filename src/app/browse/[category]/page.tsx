@@ -1,3 +1,4 @@
+import { Total } from "@/components/Browse";
 import { GoBack } from "@/components/Category/GoBack";
 import { ItemsGrid } from "@/components/Category/ItemsGrid";
 import { Typography } from "@mui";
@@ -14,6 +15,7 @@ const CategoryPage: NextPage<CategoryPageProps> = ({ params }) => {
         <>
             <ItemsGrid category={params.category} />
             <GoBack />
+            <Total />
         </>
     );
 };

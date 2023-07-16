@@ -1,7 +1,7 @@
 import "$styles/globals.css";
 import { Metadata } from "next";
 import { Box } from "@mui";
-import { SearchBar } from "@/components/Browse";
+import { SearchBar, Stories } from "@/components/Browse";
 
 export const metadata: Metadata = {
     title: "Browse items",
@@ -26,6 +26,7 @@ export default function BrowseLayout({ children }: BrowseLayoutProps) {
                 }}
             >
                 <SearchBar />
+                <Stories />
                 {children}
             </Box>
         </>

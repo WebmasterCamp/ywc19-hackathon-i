@@ -8,7 +8,7 @@ export const SearchBar: FC = () => {
     const { setSearchText } = useAppContext();
     return (
         <TextField
-            sx={{ width: "95%", marginBottom: 2 }}
+            sx={{ width: "95%", marginBottom: 4 }}
             id="outlined-basic"
             variant="outlined"
             placeholder="Search"

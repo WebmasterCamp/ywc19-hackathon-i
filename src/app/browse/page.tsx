@@ -1,3 +1,4 @@
+import { Total } from "@/components/Browse";
 import { CategoryGrid } from "@/components/Browse/CategoryGrid";
 import { Box, Typography } from "@mui";
 import { NextPage } from "next";
@@ -15,6 +16,7 @@ const BrowsePage: NextPage = () => {
             ></Box>
 
             <CategoryGrid />
+            <Total />
             <Typography>browse</Typography>
         </>
     );
