@@ -1,8 +1,10 @@
-"use client";
-import { FC } from "react";
-import { HomeCarousel } from "./HomeCarousel";
-import { Slogan } from "./Slogan";
-import { HotDeal } from "./HotDeal";
+'use client';
+import { FC } from 'react';
+import { Header } from '../Header';
+import { HomeCarousel } from './HomeCarousel';
+import { Slogan } from './Slogan';
+import { HotDeal } from './HotDeal';
+import { AllCategory } from '../Category/AllCategory';
 
 export const HomePage: FC = () => {
     return (
@@ -10,6 +12,7 @@ export const HomePage: FC = () => {
             <HomeCarousel />
             <Slogan />
             <HotDeal />
+            <AllCategory />
         </>
     );
 };

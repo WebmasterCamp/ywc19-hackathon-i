@@ -12,7 +12,7 @@ interface ItemProps {
 
 const Item: FC<ItemProps> = ({ name, description }) => {
     return (
-        <Box sx={{ minHeight: "200px", background: "#D9D9D9" }}>
+        <Box sx={{ minHeight: '200px', background: '#D9D9D9' }}>
             <h2>{name}</h2>
             <p>{description}</p>
 
