@@ -39,7 +39,7 @@ export const CategroyRow: FC<CategoryRowProps> = ({ category }) => {
                 }}
             >
                 {Ingredients.filter((i) => i.category === category)
-                    .map((i) => <ItemCard key={i.name} name={i.name} />)
+                    .map((i) => <ItemCard key={i.name} ingre={i} />)
                     .slice(0, 4)}
             </Box>
             <Box
@@ -51,7 +51,7 @@ export const CategroyRow: FC<CategoryRowProps> = ({ category }) => {
                 }}
             >
                 {Ingredients.filter((i) => i.category === category).map((i) => (
-                    <ItemCard key={i.name} name={i.name} />
+                    <ItemCard key={i.name} ingre={i} />
                 ))}
             </Box>
         </Box>

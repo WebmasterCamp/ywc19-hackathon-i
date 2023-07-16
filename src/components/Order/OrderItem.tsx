@@ -33,7 +33,7 @@ export const OrderItem: FC<OrderItemProps> = ({ ingredientId }) => {
                 alt="img"
                 src={ingredient.image}
                 width={400}
-                height={400}
+                height={500}
                 style={{
                     objectFit: "cover",
                     borderRadius: "10px",
@@ -45,7 +45,7 @@ export const OrderItem: FC<OrderItemProps> = ({ ingredientId }) => {
                     padding: 2,
                     borderRadius: "10px",
                     width: { xs: "80%", md: "50%" },
-                    height: { xs: 400, md: 400 },
+                    height: { xs: 500, md: 500 },
                     boxSizing: "border-box",
                 }}
             >

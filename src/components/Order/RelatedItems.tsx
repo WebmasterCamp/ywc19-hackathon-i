@@ -17,7 +17,6 @@ export const RelatedItems: FC<RelatedItemsProps> = ({ ingredientId }) => {
             sx={{
                 width: "100%",
                 display: "flex",
-                backgroundColor: "pink",
                 paddingX: "5%",
                 boxSizing: "border-box",
                 flexDirection: "column",
@@ -32,7 +31,6 @@ export const RelatedItems: FC<RelatedItemsProps> = ({ ingredientId }) => {
                     width: "100%",
                     display: "flex",
                     justifyContent: "space-between",
-                    backgroundColor: "lightgreen",
                     // gap: 2,
                 }}
             >
