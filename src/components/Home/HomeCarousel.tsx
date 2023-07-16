@@ -13,8 +13,8 @@ interface ItemProps {
 const Item: FC<ItemProps> = ({ name, description }) => {
     return (
         <Box sx={{ minHeight: '200px', background: '#D9D9D9' }}>
-            <h2>{props.item.name}</h2>
-            <p>{props.item.description}</p>
+            <h2>{name}</h2>
+            <p>{description}</p>
 
             <Button className="CheckButton">Check it out!</Button>
         </Box>
