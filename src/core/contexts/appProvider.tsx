@@ -3,12 +3,13 @@
 import { FC, PropsWithChildren, useEffect, useState } from "react";
 
 import { AppContext } from "./appContext";
-import { Item } from "../types";
+import { Item, Order } from "../types";
 import { initialItems, Shops } from "./data";
 
 export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
     const [items, setItems] = useState<Item[]>([]);
     const [searchText, setSearchText] = useState<string>("");
+    const [orders, setOrders] = useState<Order[]>([]);
 
     useEffect(() => {
         setItems(() => initialItems);
@@ -25,10 +26,8 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
                 (item) =>
                     item.ingredientId === ingredientId && item.shopId === shopId
             );
-            console.log(shopId, ingredientId, amount, item);
             if (item) {
                 const finalAmount = Math.max(0, item.amount - amount);
-                console.log(`finalAmount: ${finalAmount}`);
                 setItems((prev) => {
                     const finalItems = [
                         ...prev.filter(
@@ -41,7 +40,15 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
                             amount: finalAmount,
                         },
                     ];
-                    console.log(finalItems);
+                    setOrders((prev) => [
+                        ...prev,
+                        {
+                            price: amount * item.price,
+                            ingredientId: item.ingredientId,
+                            amount,
+                        },
+                    ]);
+
                     return finalItems;
                 });
             }
@@ -56,6 +63,8 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
                 orderItems,
                 searchText,
                 setSearchText,
+                orders,
+                setOrders,
             }}
         >
             {children}

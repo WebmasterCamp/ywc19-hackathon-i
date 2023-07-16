@@ -1,7 +1,7 @@
 "use client";
 
 import { Dispatch, SetStateAction, createContext, useContext } from "react";
-import { Item } from "../types";
+import { Item, Order } from "../types";
 
 interface IAppContext {
     items: Item[];
@@ -9,6 +9,8 @@ interface IAppContext {
     orderItems: (shopId: number, ingredientId: number, amount: number) => void;
     searchText: string;
     setSearchText: Dispatch<SetStateAction<string>>;
+    orders: Order[];
+    setOrders: Dispatch<SetStateAction<Order[]>>;
 }
 
 export const AppContext = createContext<IAppContext>({
@@ -17,6 +19,8 @@ export const AppContext = createContext<IAppContext>({
     orderItems: () => {},
     searchText: "",
     setSearchText: () => {},
+    orders: [],
+    setOrders: () => {},
 });
 
 export function useAppContext() {
