@@ -27,7 +27,8 @@ export interface Shop {
     rating: number;
 }
 
-export interface Supply {
-    shopId: number;
-    items: Item[];
+export interface Order {
+    ingredientId: number;
+    amount: number;
+    price: number;
 }
