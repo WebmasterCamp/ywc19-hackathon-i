@@ -1,8 +1,8 @@
-<<<<<<< HEAD
 'use client';
 import { FC } from 'react';
 import { Box, Button, Container } from '../mui';
 import { LinearProgress, Typography } from '@mui/material';
+import Link from 'next/link';
 
 function LinearProgressWithLabel(props: {} & { value: number }) {
     return (
@@ -20,11 +20,6 @@ function LinearProgressWithLabel(props: {} & { value: number }) {
     );
 }
 
-=======
-"use client";
-import { FC } from "react";
-import { Box, Button, Container } from "../mui";
->>>>>>> a9677f3995be44d3d3897c32a9f8578432a8eb2d
 
 export const HotDeal: FC = () => {
     return (

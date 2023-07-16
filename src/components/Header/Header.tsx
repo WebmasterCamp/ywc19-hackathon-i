@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { Container, Typography } from '../mui';
 import { AppBar, Box } from '@mui/material';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import Link from 'next/link';
 
 export const Header: FC = () => {
     return (
@@ -11,9 +12,9 @@ export const Header: FC = () => {
                 position="static"
                 sx={{
                     background: '#FFFFFF',
-                    color: "#FF7009",
+                    color: '#FF7009',
                     boxShadow: 'none',
-                    padding:'0.5em'
+                    padding: '0.5em',
                 }}
             >
                 <Container
@@ -23,8 +24,16 @@ export const Header: FC = () => {
                         justifyContent: 'space-between',
                     }}
                 >
-                    <Box component="img" src='./logo-orange.png'/>
-                    <Box sx={{ display: 'flex' , alignItems: 'center', gap: "10px"}}>
+                    <Link href="/">
+                        <Box component="img" src="./logo-orange.png" />
+                    </Link>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '10px',
+                        }}
+                    >
                         <ShoppingBasketIcon
                             sx={{
                                 color: '#D9D9D9',
