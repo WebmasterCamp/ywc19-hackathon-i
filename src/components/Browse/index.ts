@@ -1,1 +1,2 @@
-export { Stories } from './Stories';
+export { Stories } from "./Stories";
+export { SearchBar } from "./SearchBar";

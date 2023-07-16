@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Typography } from "@mui";
 import { FC } from "react";
 import { ItemCard } from "./ItemCard";

@@ -1,3 +1,4 @@
+import { GoBack } from "@/components/Category/GoBack";
 import { ItemsGrid } from "@/components/Category/ItemsGrid";
 import { Typography } from "@mui";
 import { NextPage } from "next";
@@ -12,7 +13,7 @@ const CategoryPage: NextPage<CategoryPageProps> = ({ params }) => {
     return (
         <>
             <ItemsGrid category={params.category} />
-            <Typography>Category: {params.category}</Typography>
+            <GoBack />
         </>
     );
 };

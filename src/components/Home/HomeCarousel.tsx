@@ -1,9 +1,9 @@
-'use client';
-import { FC } from 'react';
-import Carousel from 'react-material-ui-carousel';
-import { Container, Button, Box } from '@mui/material';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+"use client";
+import { FC } from "react";
+import Carousel from "react-material-ui-carousel";
+import { Button, Box } from "@mui/material";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 
 interface ItemProps {
     name: string;
@@ -24,12 +24,12 @@ const Item: FC<ItemProps> = ({ name, description }) => {
 export const HomeCarousel: FC = () => {
     const items = [
         {
-            name: 'Random Name #1',
-            description: 'Probably the most random thing you have ever seen!',
+            name: "Random Name #1",
+            description: "Probably the most random thing you have ever seen!",
         },
         {
-            name: 'Random Name #2',
-            description: 'Hello World!',
+            name: "Random Name #2",
+            description: "Hello World!",
         },
     ];
 
@@ -41,7 +41,7 @@ export const HomeCarousel: FC = () => {
             navButtonsAlwaysVisible
             navButtonsProps={{
                 style: {
-                    background: 'none',
+                    background: "none",
                 },
             }}
             indicatorIconButtonProps={{
@@ -51,13 +51,13 @@ export const HomeCarousel: FC = () => {
             }}
             indicatorContainerProps={{
                 style: {
-                    position: 'relative',
+                    position: "relative",
                     bottom: 20,
                 },
             }}
         >
             {items.map((item, i) => (
-                <Item item={item} key={i} />
+                <Item name={item.name} description={item.description} key={i} />
             ))}
         </Carousel>
     );

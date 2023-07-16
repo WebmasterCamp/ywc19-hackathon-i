@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui";
 import { FC } from "react";
 import { ItemBuyCard } from "./ItemBuyCard";
+import { Ingredients } from "@/core/contexts/data";
 
 interface ItemsGridProps {
     category: string;
@@ -27,11 +28,9 @@ export const ItemsGrid: FC<ItemsGridProps> = ({ category }) => {
                     width: "100%",
                 }}
             >
-                <ItemBuyCard />
-                <ItemBuyCard />
-                <ItemBuyCard />
-                <ItemBuyCard />
-                <ItemBuyCard />
+                {Ingredients.filter((i) => i.category === category).map((i) => (
+                    <ItemBuyCard key={i.name} name={i.name} />
+                ))}
             </Box>
         </Box>
     );
